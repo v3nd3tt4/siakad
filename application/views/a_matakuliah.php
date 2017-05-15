@@ -16,7 +16,7 @@
 					Nama Matakuliah
 				</th>
 				<th>
-					SKS
+					Bobot
 				</th>
 				<th>
 					keterangan

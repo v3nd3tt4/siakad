@@ -43,6 +43,8 @@ class A_mahasiswa extends CI_Controller {
 				'alamat_sekolah' => $this->input->post('alamat_sekolah'),
 				'tahun_masuk_kuliah' => $this->input->post('tahun_masuk_kuliah'),
 				'id_kelas' => $this->input->post('kelas_mhs'),
+				'nama_ayah' => $this->input->post('nama_ayah_kandung'),
+				'nama_ibu' => $this->input->post('nama_ibu_kandung')
 			);
 			$simpan = $this->Model->input_data($data, 'mahasiswa');
 				if($simpan){
@@ -90,7 +92,7 @@ class A_mahasiswa extends CI_Controller {
 	}
 
 	public function edit_data(){
-		$username = $this->input->post('nim');
+		$username = $this->input->post('id_mhs');
 		$data = array(
 				'npm' => $this->input->post('nim'),
 				'nama_mhs' => $this->input->post('nama_mhs'),
@@ -105,10 +107,13 @@ class A_mahasiswa extends CI_Controller {
 				'alamat_sekolah' => $this->input->post('alamat_sekolah'),
 				'tahun_masuk_kuliah' => $this->input->post('tahun_masuk_kuliah'),
 				'id_kelas' => $this->input->post('kelas_mhs'),
+				'nama_ayah' => $this->input->post('nama_ayah_kandung'),
+				'nama_ibu' => $this->input->post('nama_ibu_kandung')
 			);
 		$update = $this->Model->edit_data('npm', $username, 'mahasiswa', $data);
 		if($update){
 			$data1 = array(
+                'username' => $this->input->post('nim'),
 				'nama' => $this->input->post('nama_mhs'),
 				'password' => password_hash($this->input->post('password_mhs'), PASSWORD_DEFAULT),
 			);

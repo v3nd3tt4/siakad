@@ -1,5 +1,5 @@
 <div class="col-md-10 content">
-<h3>KRS Semester <?=$semester?></h3>
+<h3>KRS Trimester <?=$semester?></h3>
 <hr/>
 <!-- Trigger the modal with a button -->
 <p>

@@ -3,8 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>SIAKAD | Stekomindo</title>
-	<meta charset="utf-8">
-	<title>SIAKAD | Stekomindo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shorcut icon" href="<?=base_url()?>assets/images/logo-01.png"/>
     <link rel="stylesheet" href="<?=base_url()?>assets/bootstrap/css/bootstrap.min.css">

@@ -17,7 +17,7 @@
       </ul>-->
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-user"></span> <?=$this->session->userdata('nama')?>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user" aria-hidden="true"></i> <?=$this->session->userdata('nama')?>
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<?=base_url()?>login/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>

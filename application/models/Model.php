@@ -45,4 +45,21 @@ class Model extends CI_Model{
   	function cek_user($data, $tabel){
   		return $this->db->get_where($tabel,$data);
   	}
+
+  	function huruf_mutu($jumlah){
+  		if($jumlah >= 0 && $jumlah <= 49){
+			$huruf_mutu = 'E';
+		}else if($jumlah >= 50 && $jumlah <= 54){
+			$huruf_mutu = 'D';
+		}else if($jumlah >= 55 && $jumlah <= 64){
+			$huruf_mutu = 'C';
+		}else if($jumlah >= 65 && $jumlah <= 74){
+			$huruf_mutu = 'B';
+		}else if($jumlah >= 75 && $jumlah <= 100){
+			$huruf_mutu = 'A';
+		}else{
+			$huruf_mutu = '-';
+		}
+		return $huruf_mutu;
+  	}
 }

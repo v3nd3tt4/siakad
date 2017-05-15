@@ -27,7 +27,7 @@
 		<tr>
 			<td>Tanggal Lahir</td>
 			<td>:</td>
-			<td><?=date('d F Y',strtotime($isi->tanggal_lahir))?></td>
+			<td><?=date("d F Y", strtotime($isi->tanggal_lahir));?></td>
 		</tr>
 		<tr>
 			<td>Jenis Kelamin</td>
@@ -43,6 +43,16 @@
 			<td>Nomor Handphone</td>
 			<td>:</td>
 			<td><?=$isi->no_hp?></td>
+		</tr>
+        <tr>
+			<td>Ayah Kandung</td>
+			<td>:</td>
+			<td><?=$isi->nama_ayah?></td>
+		</tr>
+        <tr>
+			<td>Ibu Kandung</td>
+			<td>:</td>
+			<td><?=$isi->nama_ibu?></td>
 		</tr>
 		<tr>
 			<td>Alamat</td>

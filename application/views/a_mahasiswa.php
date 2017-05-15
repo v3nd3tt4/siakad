@@ -154,6 +154,14 @@
 	        	<label>Tahun Masuk Kuliah:</label>
 	        	<input type="text" name="tahun_masuk_kuliah" id="tahun_masuk_kuliah" class="form-control" required />
 	        </div>
+            <div class="form-group">
+	        	<label>Nama Ayah Kandung:</label>
+	        	<input type="text" name="nama_ayah_kandung" id="nama_ayah_kandung" class="form-control" required />
+	        </div>
+            <div class="form-group">
+	        	<label>Nama Ibu Kandung:</label>
+	        	<input type="text" name="nama_ibu_kandung" id="nama_ibu_kandung" class="form-control" required />
+	        </div>
 	        <div class="form-group">
 	        	<label>Password:</label>
 	        	<input type="password" name="password_mhs" id="password_mhs" required class="form-control" />

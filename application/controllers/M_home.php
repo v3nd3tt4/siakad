@@ -17,7 +17,7 @@ class M_home extends CI_Controller {
 		$npm = $this->session->userdata('username');
 		$data = array(
 			'page' => 'm_home',
-			'isi' => $this->db->query("select * from mahasiswa left join kelas on mahasiswa.id_kelas=kelas.id left join pembimbing_akademik on pembimbing_akademik.npm=mahasiswa.npm left join dosen on pembimbing_akademik.kode_dosen=dosen.no_dosen where mahasiswa.npm='$npm'")->row()
+			'isi' => $this->db->query("select *, mahasiswa.tanggal_lahir, mahasiswa.jenis_kelamin, mahasiswa.alamat, mahasiswa.no_hp, mahasiswa.agama, mahasiswa.tempat_lahir from mahasiswa left join kelas on mahasiswa.id_kelas=kelas.id left join pembimbing_akademik on pembimbing_akademik.npm=mahasiswa.npm left join dosen on pembimbing_akademik.kode_dosen=dosen.no_dosen where mahasiswa.npm='$npm'")->row()
 			
 		);
 		$this->load->view('template_mahasiswa/wrapper', $data);

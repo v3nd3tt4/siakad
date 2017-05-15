@@ -102,14 +102,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <img src="<?=base_url()?>assets/images/untitled.png" class="img-responsive img-thumbnail"/>
+                <img src="<?=base_url()?>assets/images/DSC_0283.JPG" class="img-responsive img-thumbnail"/>
             </div>
             <div class="col-md-3">
                 <img src="<?=base_url()?>assets/images/2.jpg" class="img-responsive img-thumbnail"/>
             </div>
             <div class="col-md-3">
+            	<img src="<?=base_url()?>assets/images/4.JPG" class="img-responsive img-thumbnail"/>
             </div>
             <div class="col-md-3">
+            	<img src="<?=base_url()?>assets/images/5.JPG" class="img-responsive img-thumbnail"/>
             </div>
         </div>
     </div>
@@ -117,7 +119,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                &copy; 2016 STEKOMINDO | Created By PILOPA
+                &copy; 2016 STEKOMINDO | Created By <a href="https://www.facebook.com/okta.pilopa">Okta Pilopa</a>
             </div>
         </div>
     </div>

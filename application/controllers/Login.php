@@ -54,8 +54,8 @@ class Login extends CI_Controller {
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('password');
 		$this->session->unset_userdata('level');
-		session_destroy();
-		redirect(base_url(),'refresh');
+		//session_destroy();
+		echo '<script>window.location.href="'.base_url().'";</script>';
 	}
 
 }
