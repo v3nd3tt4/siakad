@@ -7,6 +7,10 @@ class Model extends CI_Model{
 		$data=$this->db->query("select * from $tabel");
 		return $data->result();
    	}
+    
+    function list_data_all($tabel){
+        return $this->db->get($tabel)->result();
+    }
 
    	function input_data($data, $tabel){
    		$simpan=$this->db->insert($tabel,$data);
