@@ -1,7 +1,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
-	var base_url = 'http://localhost/siakad/';
+	var base_url = '<?=base_url()?>';
 
 	$('.t').dataTable();
 
@@ -403,7 +403,7 @@ $(document).ready(function(){
 		e.preventDefault();
 	      $('#modal_mhs').modal();
 	      $('#aksi_mhs').val('edit');
-	      //$('#nim').attr('readonly', true);
+	      $('#nim').attr('readonly', true);
 	      var id = $(this).attr('id');
 	      $('#id_mhs').val(id);
 
@@ -431,8 +431,6 @@ $(document).ready(function(){
 	          $('#tahun_lulus_sekolah').val(data.tahun_lulus);
 	          $('#alamat_sekolah').val(data.alamat_sekolah);	          
 	          $('#tahun_masuk_kuliah').val(data.tahun_masuk_kuliah);
-			  $('#nama_ayah_kandung').val(data.nama_ayah);
-			  $('#nama_ibu_kandung').val(data.nama_ibu);
 	          //$('#tahun_masuk_kuliah').val(data.tahun_masuk_kuliah);
 	        }
 	      });
@@ -978,48 +976,5 @@ $(document).ready(function(){
 	  });
 	/*end masa krs*/
 
-	$(document).on('submit', '#show_list_nilai', function(e){
-		e.preventDefault();
-		var data = $('#show_list_nilai').serialize();
-		$('#result_list_nilai').html('Loading....');
-		$.ajax({
-			url: base_url+'a_input_nilai/show_list_nilai',
-			type: 'POST',
-			data: data,
-			success: function(msg){
-				$('#result_list_nilai').html(msg);
-			}
-		});
-
-	});
-
-	$(document).on('submit', '#form_insert_nilai', function(e){
-		e.preventDefault();
-		$('#notif_form_insert_nilai').html('Loading....');
-		var data = $('#form_insert_nilai').serialize();
-		$.ajax({
-			url: base_url+'a_input_nilai/proses_insert_nilai',
-			type: 'POST',
-			data: data,
-			success: function(msg){
-				$('#notif_form_insert_nilai').html(msg);
-			}
-		});
-	});
-
-	$(document).on('submit', '#show_view_nilai', function(e){
-		e.preventDefault();
-		var data = $('#show_view_nilai').serialize();
-		$('#result_view_nilai').html('Loading....');
-		$.ajax({
-			url: base_url+'a_lihat_nilai/show_view_nilai',
-			type: 'POST',
-			data: data,
-			success: function(msg){
-				$('#result_view_nilai').html(msg);
-			}
-		});
-
-	});
 });
 </script>

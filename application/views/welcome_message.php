@@ -17,7 +17,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--<script src="<?=base_url()?>assets/datatables/media/js/dataTables.bootstrap.min.js"></script>-->
     <script src="<?=base_url()?>assets/datatables/media/js/jquery.dataTables.min.js"></script>
     <script src="<?=base_url()?>assets/jqueryui/jquery-ui.js"></script>
-    <script src="<?=base_url()?>assets/my_action.js"></script>
+    <!-- <script src="<?=base_url()?>assets/my_action.js"></script> -->
+    <?php
+        include './assets/my_action.php';
+    ?>
     <style>
         body{
             background: url("<?=base_url()?>assets/images/bg.jpg");
