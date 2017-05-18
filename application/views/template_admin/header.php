@@ -59,6 +59,9 @@
         .active{
             color: #E59F3B;
         }
+        .btn{
+            border-radius: 0px;
+        }
     </style>
 </head>
 <body>
