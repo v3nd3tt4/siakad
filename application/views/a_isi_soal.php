@@ -45,7 +45,7 @@
 			<td>Isi Soal</td>
 			<td>:</td>
 			<td>
-				<textarea name="isi_soal" id="isi_soal" class="form-control" ></textarea>
+				<textarea name="isi_soal" id="isi_soal" class="form-control ckeditor" ></textarea>
 			</td>
 		</tr>
 		<tr>
