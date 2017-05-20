@@ -38,6 +38,10 @@ class Model extends CI_Model{
 		return $this->db->get_where($tabel,array($tb_id=>$param_id));
 	}
 
+	function ambil_new($tabel, $param){
+		return $this->db->get_where($tabel, $param);
+	}
+
 	function cek_data($tb_id, $param_id, $tabel){
 		return $this->db->get_where($tabel,array($tb_id=>$param_id));
 	}

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?=base_url()?>assets/datatables/media/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/jqueryui/jquery-ui.css">
     <script src="<?=base_url()?>assets/datatables/media/js/jquery.js"></script>
+    <script src="<?=base_url()?>assets/ckeditor/ckeditor.js"></script>
     <script src="<?=base_url()?>assets/bootstrap/js/bootstrap.min.js"></script>
     <!--<script src="<?=base_url()?>assets/datatables/media/js/dataTables.bootstrap.min.js"></script>-->
     <script src="<?=base_url()?>assets/datatables/media/js/jquery.dataTables.min.js"></script>
@@ -58,6 +59,9 @@
         }
         .active{
             color: #E59F3B;
+        }
+        .btn{
+            border-radius: 0px;
         }
     </style>
 </head>

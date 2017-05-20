@@ -1019,7 +1019,16 @@ $(document).ready(function(){
 				$('#result_view_nilai').html(msg);
 			}
 		});
-
 	});
+
+	for (instance in CKEDITOR.instances) {
+        CKEDITOR.instances[instance].updateElement();
+    }
+
+	CKEDITOR.replace( 'isi_soal', {
+    	// extraPlugins : 'uicolor',
+		height: '200px',
+		// "filebrowserImageUploadUrl": "/assets/ckeditor/plugins/imgupload/imgupload.php"
+    });
 });
 </script>
