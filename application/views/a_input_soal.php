@@ -7,7 +7,6 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Kode Soal</th>
                 <th>Judul</th>
                 <th>Jumlah Soal</th>
                 <th></th>
@@ -17,10 +16,11 @@
             <?php $no = 1; foreach($data_soal as $data_soal){ ?>
             <tr>
                 <td><?=$no?></td>
-                <td><?=$data_soal->kode_soal?></td>
                 <td><?=$data_soal->judul_soal?></td>
                 <td><?=$data_soal->jumlah_soal?></td>
-                <td></td>
+                <td>
+                    <a href="<?=base_url()?>a_input_soal/edit_soal?id_soal=<?=$data_soal->id_soal?>"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+                </td>
             </tr>
             <?php $no++; }?>
         </tbody>

@@ -54,6 +54,10 @@ class Model extends CI_Model{
   		return $this->db->get_where($tabel,$data);
   	}
 
+  	function last_id(){
+  		return $this->db->insert_id();
+  	}
+
   	function huruf_mutu($jumlah){
   		if($jumlah >= 0 && $jumlah <= 49){
 			$huruf_mutu = 'E';

@@ -1021,6 +1021,8 @@ $(document).ready(function(){
 		});
 	});
 
+	$('.submit_simpan_soal').affix({offset: {top: 50} });
+
 	// for (instance in CKEDITOR.instances) {
  //        CKEDITOR.instances[instance].updateElement();
  //    }
