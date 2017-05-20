@@ -1,7 +1,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
-	var base_url = 'http://localhost/siakad/';
+	var base_url = '<?=base_url()?>';
 
 	$('.t').dataTable();
 
@@ -717,28 +717,28 @@ $(document).ready(function(){
 	          $('#matkul option').each(function(){
 	              if($(this).val() == data.kode_mk){
 		                console.log($(this).val());
-		                $("#matkul option[value="+data.kode_mk+"]").attr("selected", true);
+		                $("#matkul option[value='"+data.kode_mk+"']").attr("selected", true);
 		          }
 	          });
 	                  
 	          $('#kelas option').each(function(){
 	              if($(this).val() == data.kode_kelas){
 		                console.log($(this).val());
-		                $("#kelas option[value="+data.kode_kelas+"]").attr("selected", true);
+		                $("#kelas option[value='"+data.kode_kelas+"']").attr("selected", true);
 		          }
 	          });
 
 	          $('#angkatan option').each(function(){
 	              if($(this).val() == data.angkatan){
 		                console.log($(this).val());
-		                $("#angkatan option[value="+data.angkatan+"]").attr("selected", true);
+		                $("#angkatan option[value='"+data.angkatan+"']").attr("selected", true);
 		          }
 	          });
 
 	          $('#semester option').each(function(){
 	              if($(this).val() == data.semester){
 		                console.log($(this).val());
-		                $("#semester option[value="+data.semester+"]").attr("selected", true);
+		                $("#semester option[value='"+data.semester+"']").attr("selected", true);
 		          }
 	          });
 	          

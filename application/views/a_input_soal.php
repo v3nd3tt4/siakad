@@ -1,6 +1,7 @@
 <div class="col-md-10 content">
 	<br/>
     <h3>Data Soal <a href="<?=base_url()?>a_input_soal/buat_soal" class="btn btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"></i> Buat Soal</a></h3>
+
     <hr/>
     <table class="table table-stripped t">
         <thead>
