@@ -18,7 +18,7 @@ class M_mulai_ujian extends CI_Controller {
 		$this->db->join('tb_buat_ujian', 'tb_buat_ujian.id_kelas = mahasiswa.id_kelas');
 		$this->db->join('soal', 'soal.id_soal = tb_buat_ujian.id_soal');
 		$this->db->join('matakuliah', 'soal.kode_mk = matakuliah.kode_mk');
-		$this->db->where(array('mahasiswa.npm' => $this->session->userdata('username')));
+		$this->db->where(array('mahasiswa.npm' => $this->session->userdata('username'), 'tb_buat_ujian.status' => 'on' ));
 		$list_ujian = $this->db->get();
 
 		$this->session->set_userdata(array('session_id' => rand()));
@@ -155,4 +155,20 @@ class M_mulai_ujian extends CI_Controller {
 			}
 		}
 	}
+
+	public function nilai_ujian_online(){
+		$this->db->from('tb_status_ujian');
+		$this->db->join('tb_buat_ujian', 'tb_buat_ujian.id_buat_ujian = tb_status_ujian.id_buat_ujian');
+		$this->db->join('soal', 'soal.id_soal = tb_buat_ujian.id_soal');
+		$this->db->join('matakuliah', 'matakuliah.kode_mk = soal.kode_mk');
+		$this->db->where(array('tb_status_ujian.npm' => $this->session->userdata('username')));
+		$nilai = $this->db->get();
+		$data = array(
+			'page' => 'm_nilai_ujian_online',
+			'data' => $nilai
+		);
+		$this->load->view('template_mahasiswa/wrapper', $data);
+
+	}
+
 }

@@ -40,5 +40,5 @@
 	<b style="color:#666666">Ujian Online</b><br/>
 
 	<a href="<?=base_url()?>m_mulai_ujian" <?php if($page=='m_mulai_ujian' || $page == 'm_kerjakan_ujian'){ ?>class="active"<?php } ?>><i class="fa fa-book" aria-hidden="true"></i> Mulai Ujian</a><br/>
-	<a href="<?=base_url()?>m_mulai_ujian/nilai_ujian_online" <?php if($page=='nilai_ujian_online'){ ?>class="active"<?php } ?>><i class="fa fa-wpforms" aria-hidden="true"></i> Nilai Ujian Online</a><br/>
+	<a href="<?=base_url()?>m_mulai_ujian/nilai_ujian_online" <?php if($page=='m_nilai_ujian_online'){ ?>class="active"<?php } ?>><i class="fa fa-wpforms" aria-hidden="true"></i> Nilai Ujian Online</a><br/>
 </div>

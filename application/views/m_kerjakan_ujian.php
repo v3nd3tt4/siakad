@@ -132,17 +132,17 @@
 	       *  Jam akan Berkurang 1
 	       */
 	       if(menit < 0) {
- 			
- 		      			$.ajax({
-							type:"POST",
-							url:"<?=base_url()?>m_mulai_ujian/simpan_jawaban",
-							data:$("#form_ujian_online").serialize(),
-							success: function(data){
-								alert("waktu habis !");
-								clearInterval();
-								window.location = "<?=base_url()?>m_mulai_ujian";
-							}
-						});
+ 			alert("waktu habis !");
+  			$.ajax({
+				type:"POST",
+				url:"<?=base_url()?>m_mulai_ujian/simpan_jawaban",
+				data:$("#form_ujian_online").serialize(),
+				success: function(data){					
+					clearInterval();
+					$('#notif_simpan_jawaban').html(data);
+					// window.location = "<?=base_url()?>m_mulai_ujian";
+				}
+			});
 						
 		  /** Jika var jam < 0
 		   *  clearInterval() Memberhentikan Interval 
