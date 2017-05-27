@@ -23,7 +23,7 @@
 				<td><?=$row->nama_mk?></td>
 				<td><?=$row->waktu_pengerjaan?> Menit</td>
 				<td>
-					<button class="btn btn-danger">Kerjakan</button>
+					<a href="<?=base_url()?>m_mulai_ujian/kerjakan?id_buat_ujian=<?=$row->id_buat_ujian?>&session=<?=$session_id?>" class="btn btn-danger">Kerjakan</a>
 				</td>
 			</tr>
 			<?php
