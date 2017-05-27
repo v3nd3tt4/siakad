@@ -9,6 +9,7 @@
                 <th>Tanggal Mulai</th>
                 <th>Tanggal Berakhir</th>
                 <th>Status</th>
+                <th>Waktu</th>
                 <th>Soal</th>
                 <th>Kelas</th>
                 <th>Aksi</th>
@@ -22,6 +23,7 @@
                 <td><?=$row->tgl_mulai?></td>
                 <td><?=$row->tgl_berakhir?></td>
                 <td><?=$row->status?></td>
+                <td><?=$row->waktu_pengerjaan?> menit</td>
                 <td><?=$row->judul_soal?></td>
                 <td><?=$row->nama_kelas?></td>
                 <td>
@@ -70,6 +72,11 @@
                     <option value="on">on</option>
                     <option value="off">off</option>
                 </select>
+            </div>
+            <div class="form-group">
+                <label>Lama Pengerjaan (Menit):</label>
+                <input type="number" name="waktu_pengerjaan" id="waktu_pengerjaan" class="form-control" required/>
+                    
             </div>
             <div class="form-group">
                 <label>Kelas:</label>

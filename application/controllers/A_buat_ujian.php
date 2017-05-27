@@ -32,6 +32,7 @@ class A_buat_ujian extends CI_Controller {
                 'tgl_mulai' => $this->input->post('tgl_mulai', true),
                 'tgl_berakhir' => $this->input->post('tgl_berakhir', true),
                 'status' => $this->input->post('status', true),
+                'waktu_pengerjaan' => $this->input->post('waktu_pengerjaan', true),
                 'id_kelas' => $this->input->post('kelas', true),
                 'id_soal' => $this->input->post('soal', true),
             );
@@ -61,6 +62,7 @@ class A_buat_ujian extends CI_Controller {
                 'tgl_mulai' => $this->input->post('tgl_mulai', true),
                 'tgl_berakhir' => $this->input->post('tgl_berakhir', true),
                 'status' => $this->input->post('status', true),
+                'waktu_pengerjaan' => $this->input->post('waktu_pengerjaan', true),
                 'id_kelas' => $this->input->post('kelas', true),
                 'id_soal' => $this->input->post('soal', true),
             );

@@ -1044,6 +1044,7 @@ $(document).ready(function(){
 	          	$('#tgl_mulai').val(data.tgl_mulai);
 	          	$('#tgl_berakhir').val(data.tgl_berakhir);
 	          	$('#status').val(data.status);
+	          	$('#waktu_pengerjaan').val(data.waktu_pengerjaan);
 	          	$('#soal option').each(function(){
 	              	if($(this).val() == data.id_soal){
 		                console.log($(this).val());

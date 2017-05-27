@@ -59,6 +59,9 @@
             border-bottom: solid medium #E59F3B;
             color: #fff;
         }
+        .btn{
+            border-radius: 0px;
+        }
     </style>
 </head>
 <body>
