@@ -37,7 +37,7 @@ class M_mulai_ujian extends CI_Controller {
 		$this->db->join('tb_isi_soal', 'tb_isi_soal.id_soal = soal.id_soal');
 		$this->db->where(array('tb_buat_ujian.id_buat_ujian' => $this->input->get('id_buat_ujian', true)));
 		$soal = $this->db->get();
-		
+
 		$data = array(
 			'page' => 'm_kerjakan_ujian',
 			'soal' => $soal
@@ -45,4 +45,6 @@ class M_mulai_ujian extends CI_Controller {
 
 		$this->load->view('template_mahasiswa/wrapper', $data);
 	}
+
+	//tes
 }
