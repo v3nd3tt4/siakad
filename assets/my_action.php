@@ -1021,6 +1021,12 @@ $(document).ready(function(){
 		});
 	});
 
+	$(document).on('click', '.tambah_buat_ujian', function(e){
+		e.preventDefault();
+		$('#modal_buat_ujian').modal();
+		$('#aksi_buat_ujian').val('tambah');
+	});
+
 	$('.submit_simpan_soal').affix({offset: {top: 50} });
 
 	// for (instance in CKEDITOR.instances) {

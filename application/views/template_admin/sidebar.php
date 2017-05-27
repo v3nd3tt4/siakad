@@ -29,5 +29,6 @@
 
 	<b style="color:#666666">UJIAN ONLINE</b><br/>
 	<a href="<?=base_url()?>a_input_soal" <?php if($page=='a_input_soal' || $page=='a_buat_soal'){ ?>class="active"<?php } ?>><i class="fa fa-pencil" aria-hidden="true"></i> Buat Soal</a><br/>
+	<a href="<?=base_url()?>a_buat_ujian" <?php if($page=='a_buat_ujian'){ ?>class="active"<?php } ?>><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Buat Ujian</a><br/>
     
 </div>

@@ -74,4 +74,11 @@ class Model extends CI_Model{
 		}
 		return $huruf_mutu;
   	}
+
+  	public function get_data_ujian(){
+  		$this->db->from('tb_buat_ujian');
+  		$this->db->join('kelas', 'kelas.id = tb_buat_ujian.id_kelas', 'left');
+  		$this->db->join('soal', 'soal.id_soal = tb_buat_ujian.id_soal', 'left');
+  		return $this->db->get();
+  	}
 }

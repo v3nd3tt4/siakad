@@ -7,6 +7,7 @@
         <thead>
             <tr>
                 <th>No.</th>
+                <th>Id Soal</th>
                 <th>Judul</th>
                 <th>Jumlah Soal</th>
                 <th></th>
@@ -16,6 +17,7 @@
             <?php $no = 1; foreach($data_soal as $data_soal){ ?>
             <tr>
                 <td><?=$no?></td>
+                <td><?=$data_soal->id_soal?></td>
                 <td><?=$data_soal->judul_soal?></td>
                 <td><?=$data_soal->jumlah_soal?></td>
                 <td>
