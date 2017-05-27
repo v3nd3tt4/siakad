@@ -2,9 +2,31 @@
 	<br/>
 	<h3>Ujian Online</h3>
 	<hr/>
+	<?php
+		if($status == 'fail'){
+			 echo '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> '.$text.' !</div>';
+		}else{
+	?>
 	<form id="form_ujian_online">
 	<div class="table-responsive">
-	<table class="table">
+	<table class="table table-striped table-bordered">
+		<tr>
+			<td>Matakuliah</td>
+			<td>:</td>
+			<td><?=$soal->result()[0]->nama_mk?></td>
+		</tr>
+		<tr>
+			<td>Jumlah Soal</td>
+			<td>:</td>
+			<td><?=$soal->result()[0]->jumlah_soal?></td>
+		</tr>
+		<tr>
+			<td>Jumlah Soal</td>
+			<td>:</td>
+			<td><?=$soal->result()[0]->waktu_pengerjaan?> Menit</td>
+		</tr>
+	</table>
+	<table class="table table-bordered">
 	<?php foreach($soal->result() as $row){?>
 		<tr>
 			<td class="col-md-1">No</td>
@@ -32,7 +54,7 @@
 			</select>
 			</td>
 		</tr>
-		<tr>
+		<tr bgcolor="#f1f1f1">
 			<td class="col-md-1">&nbsp;</td>
 			<td class="col-md-1"></td>
 			<td class="col-md-10"></td>
@@ -55,6 +77,9 @@
 	  	</div>
 	</nav>
 	</form>
+	<?php
+		}
+	?>
 </div>
 <script type="text/javascript">
  
