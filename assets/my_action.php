@@ -1027,6 +1027,90 @@ $(document).ready(function(){
 		$('#aksi_buat_ujian').val('tambah');
 	});
 
+	$(document).on('click', '.edit_buat_ujian', function(e){
+		e.preventDefault();
+	    $('#modal_buat_ujian').modal();
+	    $('#aksi_buat_ujian').val('edit');
+	    var id = $(this).attr('id');
+	    $('#id_buat_ujian').val(id);
+
+	     $.ajax({
+	        url: base_url+'a_buat_ujian/ambil',
+	        data: 'id='+id,
+	        type: 'POST',
+	        dataType:'json',
+	        success: function(data){
+	          	$('#judul_buat_ujian').val(data.judul_buat_ujian);
+	          	$('#tgl_mulai').val(data.tgl_mulai);
+	          	$('#tgl_berakhir').val(data.tgl_berakhir);
+	          	$('#status').val(data.status);
+	          	$('#soal option').each(function(){
+	              	if($(this).val() == data.id_soal){
+		                console.log($(this).val());
+		                $("#soal option[value="+data.id_soal+"]").attr("selected", true);
+		          	}
+	        	});
+	          	$('#kelas option').each(function(){
+	              	if($(this).val() == data.id_kelas){
+		                console.log($(this).val());
+		                $("#kelas option[value="+data.id_kelas+"]").attr("selected", true);
+		          	}
+	          	});
+	        }
+	    });
+	});
+
+	$(document).on('submit', '#form_buat_ujian', function(e){
+		e.preventDefault();
+		$('#notif_buat_ujian').html('Loading...');
+		var data = $('#form_buat_ujian').serialize();
+		var aksi = $('#aksi_buat_ujian').val();
+
+		if(aksi == 'tambah'){
+			$.ajax({
+				url: base_url+'a_buat_ujian/simpan',
+				data: data,
+				type: 'POST',
+				// dataType: 'JSON',
+				success: function(msg){
+					$('#notif_buat_ujian').html(msg);
+				}
+			});
+		}else if(aksi == 'edit'){
+			// var data=$('#form_masa_krs').serialize();
+	        $('#notif_buat_ujian').html('Loading..');
+		    $.ajax({
+		        url: base_url+'a_buat_ujian/edit_data',
+		        data: data,
+		        type:'POST',
+		        success: function(msg){
+		          $('#notif_buat_ujian').html(msg);
+		        }
+		    }); 
+		}
+		
+	});
+
+	$(document).on('click', '.hapus_buat_ujian', function(e){
+		e.preventDefault();
+		$('#modal_hapus_buat_ujian').modal();
+
+		var id = $(this).attr('id');
+      
+	      $(document).on('click', '#proses_hapus_buat_ujian', function(e){
+	        e.preventDefault();
+	        $('#notif_hapus_buat_ujian').html('Loading..');
+	        $.ajax({
+	          url: base_url+'a_buat_ujian/hapus_data',
+	          data: 'id='+id,
+	          type: 'POST',
+	          success: function(msg){
+	            $('#notif_hapus_buat_ujian').html(msg);
+	          }       
+	        });
+	      })
+	});
+
 	$('.submit_simpan_soal').affix({offset: {top: 50} });
 
 	// for (instance in CKEDITOR.instances) {

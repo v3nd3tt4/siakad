@@ -21,5 +21,69 @@ class A_buat_ujian extends CI_Controller {
         );
         $this->load->view('template_admin/wrapper', $data);
     }
+
+    public function simpan(){
+
+        if($this->input->post('judul_buat_ujian', true) == '' || $this->input->post('tgl_mulai', true) == '' || $this->input->post('tgl_berakhir', true) == '' || $this->input->post('status', true) == '' || $this->input->post('kelas', true) == '' || $this->input->post('soal', true) == ''){
+            echo '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Lengkapi Data !</div>';
+        }else{
+            $data = array(              
+                'judul_buat_ujian' => $this->input->post('judul_buat_ujian', true),
+                'tgl_mulai' => $this->input->post('tgl_mulai', true),
+                'tgl_berakhir' => $this->input->post('tgl_berakhir', true),
+                'status' => $this->input->post('status', true),
+                'id_kelas' => $this->input->post('kelas', true),
+                'id_soal' => $this->input->post('soal', true),
+            );
+            $simpan = $this->Model->input_data($data, 'tb_buat_ujian');
+            if($simpan){
+                echo '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Berhasil disimpan !</div>';
+                echo'<script>location.reload();</script>';
+            }else{
+                echo '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Gagal disimpan !</div>';
+            }
+        }
+    }
+
+    public function ambil(){
+        $username = $this->input->post('id');
+        $data = $this->Model->ambil('id_buat_ujian', $username, 'tb_buat_ujian')->row();
+
+        echo json_encode($data);
+    }
+
+    public function edit_data(){
+        if($this->input->post('judul_buat_ujian', true) == '' || $this->input->post('tgl_mulai', true) == '' || $this->input->post('tgl_berakhir', true) == '' || $this->input->post('status', true) == '' || $this->input->post('kelas', true) == '' || $this->input->post('soal', true) == ''){
+            echo '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Lengkapi Data !</div>';
+        }else{
+            $data = array(              
+                'judul_buat_ujian' => $this->input->post('judul_buat_ujian', true),
+                'tgl_mulai' => $this->input->post('tgl_mulai', true),
+                'tgl_berakhir' => $this->input->post('tgl_berakhir', true),
+                'status' => $this->input->post('status', true),
+                'id_kelas' => $this->input->post('kelas', true),
+                'id_soal' => $this->input->post('soal', true),
+            );
+            $simpan = $this->Model->edit_data('id_buat_ujian', $this->input->post('id_buat_ujian', true), 'tb_buat_ujian', $data);
+            if($simpan){
+                echo '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Berhasil disimpan !</div>';
+                echo'<script>location.reload();</script>';
+            }else{
+                echo '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Gagal disimpan !</div>';
+            }
+        }
+    }
+
+    public function hapus_data(){
+        $id=$this->input->post('id');
+        $hapus = $this->Model->hapus_data('id_buat_ujian', $id, 'tb_buat_ujian');
+        if($hapus){
+            echo '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Berhasil hapus !</div>';
+            echo'<script>location.reload();</script>';
+        }
+        else{
+            echo '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Gagal hapus !</div>';
+        }
+    }
     
 }

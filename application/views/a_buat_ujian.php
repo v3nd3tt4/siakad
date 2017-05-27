@@ -78,7 +78,7 @@
                     <?php
                         foreach ($kelas as $kelas) {
                     ?>
-                    <option value="<?=$kelas->nama_kelas?>"><?=$kelas->nama_kelas?></option>
+                    <option value="<?=$kelas->id?>"><?=$kelas->nama_kelas?></option>
                     <?php
                         }
                     ?>
@@ -103,6 +103,34 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal Hapus -->
+<div id="modal_hapus_buat_ujian" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Ujian Online</h4>
+      </div>
+      <div class="modal-body">
+        <div id="notif_hapus_buat_ujian"></div>
+        <p>
+            Apakah anda yakin akan menghapus data ini ?
+        </p>
+        <p>
+            <button type="button" class="btn btn-danger" id="proses_hapus_buat_ujian" >Ya</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
+        </p>
+      </div>
+      <!--<div class="modal-footer">
+        
+      </div>-->
     </div>
 
   </div>
