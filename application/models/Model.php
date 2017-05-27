@@ -34,6 +34,10 @@ class Model extends CI_Model{
 		return true;
    	}
 
+   	function input_data_simultan($data, $table){
+   		return $this->db->insert_batch($table, $data);
+   	}
+
    	function ambil($tb_id,$param_id, $tabel){
 		return $this->db->get_where($tabel,array($tb_id=>$param_id));
 	}

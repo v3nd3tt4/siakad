@@ -7,9 +7,18 @@
 			 echo '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> '.$text.' !</div>';
 		}else{
 	?>
+	
 	<form id="form_ujian_online">
+	<input type="hidden" name="id_buat_ujian" value="<?=$soal->result()[0]->id_buat_ujian?>">
+	<input type="hidden" name="id_soal" value="<?=$soal->result()[0]->id_soal?>">
+	<input type="hidden" name="jumlah_soal" value="<?=$soal->result()[0]->jumlah_soal?>">
 	<div class="table-responsive">
 	<table class="table table-striped table-bordered">
+		<tr>
+			<td>Judul</td>
+			<td>:</td>
+			<td><?=$soal->result()[0]->judul_buat_ujian?></td>
+		</tr>
 		<tr>
 			<td>Matakuliah</td>
 			<td>:</td>
@@ -65,14 +74,16 @@
 	<nav class="navbar navbar-default navbar-fixed-bottom">
 	  	<div class="container">
 	    	<ul class="nav navbar-nav navbar-right">
+	    		<li>
+	      			<a href="#" id="notif_simpan_jawaban">
+
+	      			</a>
+	      		</li>
 	      		<li>
 	      			<a href="#">
 	      			<span id="timer" style="color: red"></span>
 	      			<button type="submit" class="btn btn-primary" ><i class="fa fa-save" aria-hidden="true"></i> Simpan</button></a>
 	      		</li>
-	      <!-- <li><a href="#">Page 1</a></li>
-	      <li><a href="#">Page 2</a></li>
-	      <li><a href="#">Page 3</a></li> -->
 	    	</ul>
 	  	</div>
 	</nav>
@@ -143,5 +154,21 @@
         }
  	/** Menjalankan Function Hitung Waktu Mundur */
         hitung();
+
+        $(document).on('submit', '#form_ujian_online', function(e){
+			e.preventDefault();
+
+			var data = $("#form_ujian_online").serialize();
+			$('#notif_simpan_jawaban').html('Loading...');
+
+			$.ajax({
+				type:"POST",
+				url:"<?=base_url()?>m_mulai_ujian/simpan_jawaban",
+				data: data,
+				success: function(msg){
+					$('#notif_simpan_jawaban').html(msg);
+				}
+			});
+		});
    });
 // ]]></script>
