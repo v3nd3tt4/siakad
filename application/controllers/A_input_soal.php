@@ -79,11 +79,11 @@ class A_input_soal extends CI_Controller {
 
         if ($this->db->trans_status() === FALSE){
             $this->db->trans_rollback();
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Gagal disimpan, terjadi kesalahan sistem !</div>'.var_dump($data2));
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Gagal disimpan, terjadi kesalahan sistem !</div>');
             redirect("a_input_soal/lanjutkan_soal");
         }else{
             $this->db->trans_commit();
-            $this->session->set_flashdata('msg', '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Berhasil disimpan !</div>'.var_dump($data2));
+            $this->session->set_flashdata('msg', '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Berhasil disimpan !</div>');
             redirect("a_input_soal/buat_soal");
         }
     }
@@ -102,11 +102,11 @@ class A_input_soal extends CI_Controller {
         $this->db->update_batch('tb_isi_soal', $data, 'id_isi_soal');
         if ($this->db->trans_status() === FALSE){
             $this->db->trans_rollback();
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Gagal disimpan, terjadi kesalahan sistem !</div>'.var_dump($data2));
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Gagal disimpan, terjadi kesalahan sistem !</div>');
             redirect("a_input_soal/edit_soal?id_soal=$id_soal");
         }else{
             $this->db->trans_commit();
-            $this->session->set_flashdata('msg', '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Berhasil disimpan !</div>'.var_dump($data2));
+            $this->session->set_flashdata('msg', '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a> Berhasil disimpan !</div>');
             redirect("a_input_soal/edit_soal?id_soal=$id_soal");
         }
     }

@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	var base_url = 'http://localhost/siakad/';
+	var base_url = 'http://siakad.stekomindo.or.id/';
 
 	$('.t').dataTable();
 
